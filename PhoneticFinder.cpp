@@ -29,7 +29,6 @@ string phonetic::find(string text, string word) {
             i++;
             index = i;
             if (j >= word.size()) {
-                cout<<chack_Word(text_source, ans, index);
                 return ans;
                 throw exception();
             }

@@ -136,5 +136,15 @@ TEST_CASE("Test for java") {
             CHECK(find(text, "YoU") == string("YOU"));
             CHECK(find(text, "YUU") == string("YOU"));
             CHECK(find(text, "YUu") == string("YOU"));
-
+}
+TEST_CASE("Test for yiyiheysayios") {
+    string text = " AAA BBB CCC YOU aRe  Ediut bed boy yiyiheysayios";
+            CHECK(find(text, "yiyiheysayios") == string("yiyiheysayios"));
+            CHECK(find(text, "iiyiheysayios") == string("yiyiheysayios"));
+    CHECK( find(text, "yiiiheysayios") == string("yiyiheysayios") );
+    CHECK( find(text, "iiiiheysayios") == string("yiyiheysayios") );
+    CHECK( find(text, "yyyiheysayios") == string("yiyiheysayios") );
+    CHECK( find(text, "yyyyheysayios") == string("yiyiheysayios") );
+    CHECK( find(text, "yiyiheisaiios") == string("yiyiheysayios") );
+    CHECK( find(text, "iiiiheisaiios") == string("yiyiheysayios") );
 }
