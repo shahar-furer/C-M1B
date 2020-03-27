@@ -148,7 +148,9 @@ TEST_CASE("Test for yiyiheysayios") {
     CHECK( find(text, "yiyiheisaiios") == string("yiyiheysayios") );
     CHECK( find(text, "iiiiheisaiios") == string("yiyiheysayios") );
 }
-//TEST_CASE("Test for yiyiheysayios") {
-//    string text = "           bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb             ";
-//            CHECK(find(text, "ppppppppppppppppppppppppppppppppp") == string("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"));
-//}
+
+TEST_CASE("Test for yiyiheysayios") {
+    string text = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
+            CHECK(find(text, "ppppppppppppppppppppppppppppppppp") == string("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"));
+            CHECK(find(text, "         ")==string("bbbbbbbbbbbbbbbbbbbbb"));
+}
