@@ -1,15 +1,39 @@
 #include <iostream>
 #include <stdexcept>
 #include "PhoneticFinder.hpp"
+#include <stdio.h>
+#include <ctype.h>
+
+using namespace std;
+
+
+
+
+#include <iostream>
+#include <stdexcept>
+#include "PhoneticFinder.hpp"
 
 
 string phonetic::find(string text, string word) {
     string ans="";
+    int i=0,j=0;
+    int counter=0;
     if (word=="" || word==" "){
         throw exception();
     }
-
-    int i=0,j=0;
+    string texttemp=text;
+    text="";
+    for (int k = 0; k <texttemp.size() ; ++k) {
+        if(texttemp[k]==' '){
+            counter++;
+        }
+        if (texttemp[k]>='A'){
+            break;
+        }
+    }
+    for (int l = counter; l <texttemp.size() ; ++l) {
+        text+=texttemp[l];
+    }
     string text_source=text;
     int index=0;
     string temp=text;
@@ -108,3 +132,9 @@ bool phonetic::same_Char(char x , char y){
     return false;
 
 }
+
+
+
+
+
+
