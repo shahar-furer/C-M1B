@@ -5,6 +5,10 @@
 
 string phonetic::find(string text, string word) {
     string ans="";
+    if (word=="" || word==" "){
+        throw exception();
+    }
+
     int i=0,j=0;
     string text_source=text;
     int index=0;
