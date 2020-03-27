@@ -52,8 +52,17 @@ string phonetic::find(string text, string word) {
             j++;
             i++;
             index = i;
-            if (j >= word.size()) {
-                return ans;
+            if (j >= word.size())
+            {
+                if(index<=text.size() && text[i]==' '){
+                    return ans;
+                    }
+                if(index>=text.size()){
+                    return ans;
+                }
+                else{
+                    throw exception();
+                }
             }
 
         }   else {
@@ -131,30 +140,6 @@ bool phonetic::same_Char(char x , char y){
     return false;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

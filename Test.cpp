@@ -152,5 +152,5 @@ TEST_CASE("Test for yiyiheysayios") {
 TEST_CASE("Test for yiyiheysayios") {
     string text = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
             CHECK(find(text, "ppppppppppppppppppppppppppppppppp") == string("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"));
-            CHECK(find(text, "         ")==string("bbbbbbbbbbbbbbbbbbbbb"));
+            CHECK_THROWS_AS(find(text, "     bbbbbbbbbbbbbbbbbbbbb"),std::exception);
 }
