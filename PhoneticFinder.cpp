@@ -47,25 +47,20 @@ string phonetic::find(string text, string word) {
         word+=tolower(temp[j]);
     }
     while (i<text.size()) {
-        if (same_Char(text[i], word[j]) && text[i]!=' ') {
+        if (same_Char(text[i], word[j]) && text[i] != ' ') {
             ans += text_source[i];
             j++;
             i++;
             index = i;
-            if (j >= word.size())
-            {
-                if(index<=text.size() && text[i]==' '){
+            if (j >= word.size()) {
+                if (index >= text.size()) {
                     return ans;
-                    }
-                if(index>=text.size()){
+                } else if (text[i] == ' ') {
                     return ans;
-                }
-                else{
-                    throw exception();
                 }
             }
 
-        }   else {
+        } else {
             ans = "";
             j = 0;
             i = next_Word(text, i);
@@ -90,8 +85,8 @@ string phonetic::chack_Word(string text, string ans,int index) {
 }
 int phonetic::next_Word(string text, int i){
     for (int j = i+1; j <text.size() ; j++) {
-        if(text[j]==' '){
-            return (j+1);
+        if(text[j]!=' '){
+            return (j);
         }
     }
     return -1;
@@ -140,6 +135,23 @@ bool phonetic::same_Char(char x , char y){
     return false;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

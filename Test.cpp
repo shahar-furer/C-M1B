@@ -138,7 +138,7 @@ TEST_CASE("Test for java") {
             CHECK(find(text, "YUu") == string("YOU"));
 }
 TEST_CASE("Test for yiyiheysayios") {
-    string text = "yiyiheysayios";
+    string text = "  yiyihe        yiyiheysayio                 yiyiheysayios                            ";
     CHECK(find(text, "yiyiheysayios") == string("yiyiheysayios"));
     CHECK(find(text, "iiyiheysayios") == string("yiyiheysayios"));
     CHECK( find(text, "yiiiheysayios") == string("yiyiheysayios") );
