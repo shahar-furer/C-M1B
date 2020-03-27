@@ -15,6 +15,17 @@ using namespace std;
 
 
 string phonetic::find(string text, string word) {
+    bool flag= true;
+    for (int m = 0; m <text.size() ; ++m) {
+        if(text[m]!=' '){
+            flag=false;
+        }
+    }
+    if (flag){
+        throw std::exception();
+    }
+
+
     string ans="";
     int i=0,j=0;
     int counter=0;
